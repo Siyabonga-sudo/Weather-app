@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/weather-style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -18,9 +19,9 @@
       <div class="weather-app-wrapper">
         <div class="weather-app-container">
           <div class="overview">
-            <h1>Cape Town</h1>
+            <h1 id="city">Cape Town</h1>
             <h2 class="time">Friday, 17:00</h2>
-            <h2>Mostly cloudy</h2>
+            <h2 id="weather-description">Mostly cloudy</h2>
           </div>
 
           <div class="row">
@@ -37,8 +38,8 @@
             <div class="col-6">
               <ul>
                 <li>Precipitation: 2%</li>
-                <li>Humidity: 72%</li>
-                <li>Wind: 21km/h</li>
+                <li>Humidity: <span id="humidity">72</span>%</li>
+                <li>Wind: <span id="wind">21</span>km/h</li>
               </ul>
             </div>
           </div>
