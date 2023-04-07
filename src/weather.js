@@ -27,7 +27,7 @@ let date = new Date();
 dayTime.innerHTML = currentDayTime(date);
 
 function displayTemperature(response) {
-  let cityElement = document.querySelector("#city");
+  let cityElement = document.querySelector("#current-city");
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#weather-description");
   let humidityElement = document.querySelector("#humidity");
@@ -47,8 +47,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-let apiKey = `e9tb1630o25a4f01cebc66c9ef1df31c`;
+function search(city) {
+  let apiKey = `e9tb1630o25a4f01cebc66c9ef1df31c`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Cape Town&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+  let inputCity = searchInput.value;
+
+  search(inputCity);
+}
+
+let searchBtn = document.querySelector("#search-btn");
+searchBtn.addEventListener("click", handleSubmit);
