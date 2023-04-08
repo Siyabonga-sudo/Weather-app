@@ -26,6 +26,17 @@ li {
   color: #d59bf6;
 }
 
+a {
+  text-decoration: none;
+}
+
+.weather-temperature .active {
+  color: #d59bf6;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
 .btnSearch {
   color: #ffffff;
   background-color: #d59bf6;
