@@ -84,3 +84,25 @@ a {
 #weather-description:first-letter {
   text-transform: capitalize;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  color: #edb1f1;
+  font-size: 18px;
+}
+
+.weather-forecast-temperature {
+  font-size: 15px;
+}
+
+.weather-temperature-max {
+  color: #9896f1;
+}
+
+.weather-temperature-min {
+  color: #edb1f1;
+}
